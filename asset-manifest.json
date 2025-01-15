@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/calendar_addax/static/css/main.058aa2ab.css",
+    "main.js": "/calendar_addax/static/js/main.2602f3a4.js",
+    "index.html": "/calendar_addax/index.html",
+    "main.058aa2ab.css.map": "/calendar_addax/static/css/main.058aa2ab.css.map",
+    "main.2602f3a4.js.map": "/calendar_addax/static/js/main.2602f3a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.058aa2ab.css",
+    "static/js/main.2602f3a4.js"
+  ]
+}
