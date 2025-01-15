@@ -1,0 +1,27 @@
+
+.navigationControls {
+    display: flex;
+  
+}
+
+.navigationBtn {
+    background-color: #4caf50; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navigationBtn:hover
+.navigationBtn:focus {
+    background-color: #45a049; 
+    transform: scale(1.05);
+}
+
+.navigationMonth {
+    margin: 4px 12px;
+}

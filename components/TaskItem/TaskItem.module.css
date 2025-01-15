@@ -1,0 +1,67 @@
+/* TaskItem.module.css */
+.taskItem {
+  padding: 8px;
+  margin: 4px 0;
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  cursor: move;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.taskItem:hover {
+  background-color: #e3f2fd;
+}
+
+
+.taskInput {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: inherit;
+}
+
+.isDragging {
+  opacity: 0.5;
+}
+
+.isOver {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.holiday {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  margin: 2px 0;
+  border-radius: 3px;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.taskContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.taskItem:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  color: #ff4444;
+}
