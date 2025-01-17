@@ -1,0 +1,18 @@
+.todayButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todayButton:hover {
+  background-color: #45a049;
+}
+
+.todayButton:active {
+  background-color: #3e8e41;
+}

@@ -1,12 +1,13 @@
-/* TaskList.module.css */
+
 .taskList {
   min-height: 40px;
   padding: 4px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.02);
+  margin-top: 24px; 
 }
 
-.isOver {
+.dragOver {
   background-color: rgba(0, 120, 255, 0.1);
   border: 1px dashed #0078ff;
 }

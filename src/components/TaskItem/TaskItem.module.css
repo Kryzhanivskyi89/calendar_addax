@@ -1,18 +1,25 @@
-/* TaskItem.module.css */
+
 .taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px;
-  margin: 4px 0;
-  background-color: #e3f2fd;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  cursor: move;
-  user-select: none;
-  transition: opacity 0.2s;
+  background-color: #fff;
+}
+
+.taskItem input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 16px;
+  outline: none;
 }
 
 .taskItem:hover {
   background-color: #e3f2fd;
 }
-
 
 .taskInput {
   width: 100%;
@@ -22,29 +29,17 @@
   font-size: inherit;
 }
 
-.isDragging {
-  opacity: 0.5;
-}
-
-.isOver {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.holiday {
-  background-color: #f0f0f0;
-  padding: 2px 4px;
-  margin: 2px 0;
-  border-radius: 3px;
-  font-size: 0.8em;
-  color: #666;
-}
-
 .taskContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 8px;
+  height: 12px;
+  padding: 4px;
+}
+
+.taskText {
+  font-size: 10px;
 }
 
 .deleteButton {
@@ -58,10 +53,14 @@
   transition: opacity 0.2s;
 }
 
+.deleteButton:hover {
+  color: #ff4444;
+}
+
 .taskItem:hover .deleteButton {
   opacity: 1;
 }
 
-.deleteButton:hover {
-  color: #ff4444;
+.isDragging {
+  opacity: 0.5;
 }

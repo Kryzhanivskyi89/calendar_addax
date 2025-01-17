@@ -2,37 +2,50 @@ import {Country, Holiday, LongWeekend, CountryInfo} from '../types/types';
 
 const BASE_URL = 'https://date.nager.at/api/v3';
 
+const handleFetch = async <T>(url: string, retries = 3): Promise<T> => {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+      }
+      return response.json();
+    } catch (error) {
+      console.error(`Attempt ${attempt} failed:`, error);
+      if (attempt === retries) {
+        throw new Error(`Failed to fetch data after ${retries} attempts.`);
+      }
+    }
+  }
+  throw new Error('Unexpected error');
+};
+
 export const fetchCountryInfo = async (countryCode: string): Promise<CountryInfo> => {
-  const response = await fetch(`${BASE_URL}/CountryInfo/${countryCode}`);
-  if (!response.ok) throw new Error('Failed to fetch country info');
-  return response.json();
+  return handleFetch<CountryInfo>(`${BASE_URL}/CountryInfo/${countryCode}`);
 };
 
 export const fetchAvailableCountries = async (): Promise<Country[]> => {
-  const response = await fetch(`${BASE_URL}/AvailableCountries`);
-  if (!response.ok) throw new Error('Failed to fetch countries');
-  return response.json();
+  return handleFetch<Country[]>(`${BASE_URL}/AvailableCountries`);
 };
 
 export const fetchLongWeekends = async (year: number, countryCode: string): Promise<LongWeekend[]> => {
-  const response = await fetch(`${BASE_URL}/LongWeekend/${year}/${countryCode}`);
-  if (!response.ok) throw new Error('Failed to fetch long weekends');
-  return response.json();
+  return handleFetch<LongWeekend[]>(`${BASE_URL}/LongWeekend/${year}/${countryCode}`);
 };
 
 export const fetchPublicHolidays = async (year: number, countryCode: string): Promise<Holiday[]> => {
-  const response = await fetch(`${BASE_URL}/PublicHolidays/${year}/${countryCode}`);
-  if (!response.ok) throw new Error('Failed to fetch holidays');
-  return response.json();
+  return handleFetch<Holiday[]>(`${BASE_URL}/PublicHolidays/${year}/${countryCode}`);
 };
 
 export const checkIfTodayIsHoliday = async (countryCode: string): Promise<boolean> => {
-  const response = await fetch(`${BASE_URL}/IsTodayPublicHoliday/${countryCode}`);
-  return response.status === 200;
+  try {
+    const response = await fetch(`${BASE_URL}/IsTodayPublicHoliday/${countryCode}`);
+    return response.status === 200;
+  } catch (error) {
+    console.error('Error checking if today is a holiday:', error);
+    return false;
+  }
 };
 
 export const fetchNextPublicHolidays = async (countryCode: string): Promise<Holiday[]> => {
-  const response = await fetch(`${BASE_URL}/NextPublicHolidays/${countryCode}`);
-  if (!response.ok) throw new Error('Failed to fetch next holidays');
-  return response.json();
+  return handleFetch<Holiday[]>(`${BASE_URL}/NextPublicHolidays/${countryCode}`);
 };
