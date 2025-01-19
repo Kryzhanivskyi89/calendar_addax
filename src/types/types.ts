@@ -56,6 +56,22 @@ export interface TodayButtonProps {
   onTodayClick: () => void;
 }
 
-export type GroupedTasks = {
+export interface Task {
+  id: string;
+  content: string;
+  date: string;
+}
+
+export interface GroupedTasks {
   [date: string]: Task[];
-};
+}
+
+export interface TaskManagerHook {
+  tasks: GroupedTasks;
+  addTask: (date: Date, content: string) => void;
+  updateTask: (taskId: string, content: string) => void;
+  moveTask: (taskId: string, newDate: string) => void;
+  deleteTask: (taskId: string) => void;
+  reorderTasks: (dragIndex: number, hoverIndex: number) => void;
+  getTasksForDate: (date: Date) => Task[];
+}
