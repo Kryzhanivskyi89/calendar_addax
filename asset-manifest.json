@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/calendar_addax/static/css/main.058aa2ab.css",
-    "main.js": "/calendar_addax/static/js/main.2602f3a4.js",
+    "main.css": "/calendar_addax/static/css/main.625e800d.css",
+    "main.js": "/calendar_addax/static/js/main.61022b81.js",
     "index.html": "/calendar_addax/index.html",
-    "main.058aa2ab.css.map": "/calendar_addax/static/css/main.058aa2ab.css.map",
-    "main.2602f3a4.js.map": "/calendar_addax/static/js/main.2602f3a4.js.map"
+    "main.625e800d.css.map": "/calendar_addax/static/css/main.625e800d.css.map",
+    "main.61022b81.js.map": "/calendar_addax/static/js/main.61022b81.js.map"
   },
   "entrypoints": [
-    "static/css/main.058aa2ab.css",
-    "static/js/main.2602f3a4.js"
+    "static/css/main.625e800d.css",
+    "static/js/main.61022b81.js"
   ]
 }
