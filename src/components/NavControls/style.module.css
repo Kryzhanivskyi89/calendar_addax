@@ -3,6 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  
+  @media screen and (min-width: 1200px) {
+    margin-top: 0px;
+    }
 }
 
 .navigationBtn {
@@ -10,8 +15,8 @@
     color: #ffffff; 
     border: none;
     border-radius: 5px; 
-    padding: 10px 20px; 
-    font-size: 16px; 
+    padding: 10px; 
+    font-size: 14px; 
     font-weight: bold; 
     cursor: pointer; 
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -25,4 +30,5 @@
 
 .navigationMonth {
     margin: 4px 12px;
+    font-size: 14px;
 }

@@ -1,13 +1,15 @@
 
 .searchContainer {
-  margin: 1rem 0;
-  padding: 0 1rem;
+  margin-top: 20px;
+  
+  @media screen and (min-width: 1200px) {
+    margin-top: 0px;
+    }
 }
 
 .searchInput {
-  width: 100%;
-  padding: 0.5rem;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 14px;
 }

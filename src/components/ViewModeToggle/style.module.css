@@ -1,0 +1,31 @@
+.viewModeToggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  
+  @media screen and (min-width: 1200px) {
+    margin-top: 0px;
+    }
+  }
+  
+  .toggleButton {
+    padding: 10px ;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .toggleButton:hover {
+    background-color: #3e8e41;
+    color: #fff;
+  }
+  
+  .activeButton {
+    background-color: #3e8e41;
+    color: #fff;
+  }

@@ -1,7 +1,11 @@
 
 .countrySelect {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    min-width: 200px;
-  }
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  
+  @media screen and (min-width: 1200px) {
+    margin-top: 0px;
+    }
+}
